@@ -4,7 +4,7 @@ function App() {
   const [greeting, setGreeting] = useState();
 
   useEffect(() => {
-    fetch("http://localhost:3333/")
+    fetch("http://localhost:3333/api")
       .then((res) => res.json())
       .then((data) => setGreeting(data));
   }, []);
