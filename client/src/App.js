@@ -3,13 +3,13 @@ import "./App.css";
 
 function App() {
   const [quote, setQuote] = useState();
-  const rand = Math.floor(Math.random() * 4);
 
   const getData = async () =>
-    fetch(`/api/${rand}`)
+    fetch(`http://localhost:3333/api`)
       .then((res) => res.json())
       .then((data) => {
-        return data;
+        const rand = Math.floor(Math.random() * data.length);
+        return data[rand];
       });
 
   const getRandomQuote = async () => setQuote(await getData());

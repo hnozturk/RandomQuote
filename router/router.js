@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const Quote = require("../model/quotes");
 
 const quotes = [
   {
@@ -24,13 +25,13 @@ const quotes = [
   },
 ];
 
-router.get("/api", (req, res) => {
-  res.send(quotes);
+router.get("/api", async (req, res) => {
+  res.send(await Quote.find());
 });
 
-router.get("/api/:id", (req, res) => {
+router.get("/api/:id", async (req, res) => {
   var id = req.params.id;
-  res.send(quotes[id]);
+  res.send(await Quote.findById(id));
 });
 
 module.exports = router;
