@@ -4,13 +4,7 @@ import "./App.css";
 function App() {
   const [quote, setQuote] = useState();
 
-  const getData = async () =>
-    fetch(`/api`)
-      .then((res) => res.json())
-      .then((data) => {
-        const rand = Math.floor(Math.random() * data.length);
-        return data[rand];
-      });
+  const getData = async () => fetch(`/api/random`).then((res) => res.json());
 
   const getRandomQuote = async () => setQuote(await getData());
 
