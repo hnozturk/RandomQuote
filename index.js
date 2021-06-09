@@ -36,6 +36,12 @@ app.get("/api", (req, res) => {
   res.send(quotes);
 });
 
+app.get("/api/:id", (req, res) => {
+  var id = req.params.id;
+  console.log(id);
+  res.send(quotes[id]);
+});
+
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname + "/client/build/index.html"));
 });
