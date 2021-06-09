@@ -5,7 +5,7 @@ function App() {
   const [quote, setQuote] = useState();
 
   const getData = async () =>
-    fetch(`http://localhost:3333/api`)
+    fetch(`/api`)
       .then((res) => res.json())
       .then((data) => {
         const rand = Math.floor(Math.random() * data.length);
