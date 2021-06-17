@@ -2,8 +2,6 @@ const express = require("express");
 const router = express.Router();
 const Quote = require("../model/quotes");
 
-
-
 router.get("/api", async (req, res) => {
   res.send(await Quote.find());
 });

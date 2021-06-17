@@ -15,6 +15,10 @@ body {
 	justify-content: center;
 }
 
+div {
+	cursor:pointer
+}
+
 h1 {
 	font-weight: 100;
 	font-size: 2rem;
@@ -24,6 +28,7 @@ h1 {
 	margin: 0;
 	padding: .5rem;
 }
+
 
 h1:before,
 h1:after {
